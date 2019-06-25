@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Cluckr App</title>
+    <link rel="stylesheet" href="/css/bootstrap-reboot.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+</head>
+
+<body>
+    <div class="container mt-5 col-10 col-sm-10 col-md-8 col-lg-6">
+        <nav class="navbar navbar-white bg-light ">
+            <a class="navbar-brand" href="/clucks"> <img src="/assets/IMG_5002.jpg" width="75" height="75">Welcome to Cluckr!</a>
+            <a href="/clucks/new"><button type="button"class="btn btn-dark ml-3">Cluck it!</button></a>
+            <% if (username) {%>
+            <form action="/sign_out" method="POST">
+                <button type="button" class="btn btn-success" disabled>Welcome, <%= username %>!</button>
+                <button name="sign_out" type="submit" class="btn btn-dark ml-4">Sign Out</button>
+            </form>
+            <% } else { %>
+            <a href="/"><button type="button" class="btn btn-dark">Sign In</button></a>
+            <% } %>
+        </nav>
+

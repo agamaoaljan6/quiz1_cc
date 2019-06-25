@@ -1,0 +1,21 @@
+<%- include("../partials/header") %>
+
+<h2 class="my-4">Your Recent Clucks</h2>
+<% for (let cluck of clucks){ %> <div class="mb-4">
+    <div class="card col-6" style="min-width: 400px;">
+        <div>
+            <img src="/assets/pngtree-seductive-roast-chicken-delicious-roast-chicken-golden-roast-chicken-delicious-roast-png-image_402408.jpg"
+                alt="chicken-dinner" height="56px" width="56px">
+            <a href="#" class="btn btn-link" id="avatar"><%= cluck.username %> | <%= timeStamp(cluck.createdAt) %> <a>
+        </div>
+        
+        <div class="card-body">
+            <p class="card-text"> <%= cluck.content %> </p>
+            <% if (cluck.image_url) { %>
+            <img class="card-img-bottom" src="<%= cluck.image_url %>" alt="<%= cluck.image_url %>"><% } %>
+        </div>
+    </div>
+</div>
+<% } %>
+
+<%- include("../partials/footer") %>
